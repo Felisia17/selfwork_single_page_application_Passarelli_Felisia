@@ -1,7 +1,21 @@
-export default function Info(){
-    return(
+import { useLoaderData, Link } from "react-router-dom";
+
+export default function Info() {
+    const posts = useLoaderData();
+
+    return (
         <>
-            <h1>Info</h1>
+            <h1>Info page</h1>
+            <h2>List:</h2>
+
+            <ul>
+                {posts && posts.map((post) => (
+                    <li key={post.id}>
+                        {post.title} :{" "}
+                        <Link to={`/info/details/${post.id}`}>Detail</Link>
+                    </li>
+                ))}
+            </ul>
         </>
-    )
+    );
 }

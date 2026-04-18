@@ -1,16 +1,21 @@
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 
 export default function Navbar(){
     return(
         <nav className="nav">
             <ul>
                 <li>
-                    {/* <a className="link1" href="/posts">Posts</a> */}
                     <Link className="link1" to={'/'}>Homepage</Link>
                 </li>
+
                 <li>
-                    {/* <a className="link2" href="/detail">Datails</a> */}
-                    <Link className="link2" to={'/posts'}>Posts</Link>
+                    <Link className="link3" to={'/info'}>Info</Link>
+                </li>
+                 <li>
+                    <Link  to={'/login'}>Login</Link>
+                </li>
+                 <li>
+                    <Link  to={'/register'}>Register</Link>
                 </li>
             </ul>
         </nav>

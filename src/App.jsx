@@ -1,38 +1,20 @@
 
-
-import Navbar from "./components/Navbar.jsx";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Homepage from "./views/Homepage.jsx";
-import Posts from "./views/Posts.jsx";
+import Info from "./views/Info.jsx";
 import Details from "./views/Details.jsx";
+import Layout from "./components/Layout.jsx";
+import { RouterProvider } from "react-router-dom";
+import router from "./assets/router/router.jsx";
 
-
-function App() { 
-
+function App() {
   return (
     <>
-
-    <BrowserRouter>
-    
-    <Navbar></Navbar>
-    
-      <Routes>
-      <Route path="/" element={<Homepage/>}/>   
-      <Route path="/posts" element={<Posts/>}/>
-      <Route path="/posts/:id" element={<Details/>}/>
-
-      </Routes>
-    </BrowserRouter>
-
+      <RouterProvider router={router}/>
     </>
-      
-      
-    
-  )
+  );
 }
 
-export default App
-
+export default App;
 
 
 
